@@ -1,4 +1,8 @@
 Timeline::Application.routes.draw do
+
+  match '/About_Us', to: 'static#about'
+
+  root to: 'static#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
