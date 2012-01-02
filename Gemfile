@@ -9,6 +9,7 @@ gem "mongoid"
 gem 'bson_ext', ">= 1.4"
 gem "devise"
 gem 'haml-rails', '>= 0.3.4'
+gem 'formtastic'
 
 # Gems used only for assets and not required
 # in production environments by default.
