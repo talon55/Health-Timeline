@@ -8,6 +8,6 @@ start to finish
 
 ### Known Bugs:
 
-#Response#chunked = true
+####Response#chunked = true
 not a problem:
 http://stackoverflow.com/questions/7082364/what-does-warn-could-not-determine-content-length-of-response-body-mean-and-h

@@ -3,5 +3,14 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *
 */
+
+
+/* Sass import commands. Files imported later have higher priority.
+    Thus, since blueprint/screen is on top, it's priority is lowest*/
+@import "blueprint/screen.css.scss";
+@import "users.css.scss";
+@import "formtastic.css.scss";
+@import "formtastic_changes.css.scss";
+@import "custom.css.scss";

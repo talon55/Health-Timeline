@@ -1,0 +1,13 @@
+<!--[if lt IE 9]
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+![endif]-->
+<!--[if lt IE8]]
+= stylesheet_link_tag 'blueprint/ie'
+![endif]-->
+<!--[if IE 6]><%= stylesheet_link_tag 'ie6' %><![endif]-->
+<!--[if IE 7]><%= stylesheet_link_tag 'ie7' %><![endif]-->
+
+= stylesheet_link_tag "application"
+= stylesheet_link_tag 'blueprint/print', media: 'print'
+= javascript_include_tag "application"
+
