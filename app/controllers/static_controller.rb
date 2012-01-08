@@ -3,6 +3,7 @@ class StaticController < ApplicationController
   end
 
   def about
+  @title = "About"
   end
 
 end

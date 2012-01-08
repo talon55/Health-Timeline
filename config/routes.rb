@@ -2,7 +2,7 @@ Timeline::Application.routes.draw do
 
   devise_for :users
 
-  match '/about_us', to: 'static#about', via: 'get'
+  match '/about', to: 'static#about', via: 'get'
 
   root to: 'static#home', via: 'get'
   # The priority is based upon order of creation:

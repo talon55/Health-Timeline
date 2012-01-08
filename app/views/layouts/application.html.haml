@@ -1,14 +1,31 @@
 !!!
 %html
   %head
-    %title Timeline
+    %title=title
     = render "/layouts/stylesheets"
     = csrf_meta_tags
+    
   %body
     .container
-      = render  "/layouts/header"
+      /banner image 
+      .span-20
+        .span-14
+          #headerimage
+            = image_tag("medlogtest.png")
+            
+        /log-in info    
+        .span-6.last
+          = render  "/layouts/header"
+             
+      .span-20
+        %hr
+        %br
 
-      %section.round
-        - flash.each do |name, msg|
-          = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
-        = yield
+      .span-20.last
+        %section
+          - flash.each do |name, msg|
+            = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
+          = yield
+          
+      .span-20.last
+        =render "/layouts/footer" 	    

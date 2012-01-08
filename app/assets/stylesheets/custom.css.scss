@@ -38,7 +38,6 @@ ul{
 }
 
 body {
-  background: darken(#afc, 20%);
 }
 
 header {
@@ -125,3 +124,17 @@ span.confirm {
   margin-bottom: 1em;
 }
 
+#stickyfooter {
+	color: #666666;
+	visibility: visible;
+	bottom: 10px;
+	position: fixed;
+	height: 30px; /* must be the same value as height */
+	clear: both;
+	text-align: center; /* up to you */
+}
+
+#Splash
+{
+text-align: center;
+}
