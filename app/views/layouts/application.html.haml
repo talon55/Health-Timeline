@@ -10,8 +10,9 @@
       /banner image 
       .span-20
         .span-14
+          %br
           #headerimage
-            = image_tag("medlogtest.png")
+            = image_tag("medlogtest2.png")
             
         /log-in info    
         .span-6.last
@@ -27,5 +28,5 @@
             = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
           = yield
           
-      .span-20.last
+      .span-20
         =render "/layouts/footer" 	    
