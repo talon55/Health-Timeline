@@ -126,13 +126,14 @@ span.confirm {
 }
 
 #stickyfooter {
-	color: #666666;
 	visibility: visible;
 	bottom: 10px;
 	position: fixed;
 	height: 30px; /* must be the same value as height */
+	width: 790px;
 	clear: both;
 	text-align: center; /* up to you */
+	color: #797979;
 }
 
 #Splash
