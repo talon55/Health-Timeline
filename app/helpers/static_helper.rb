@@ -1,7 +1,7 @@
 module StaticHelper
 
   def title
-    base_title = "Timeline"
+    base_title = "MedLog"
     if @title.nil?
       base_title
     else
