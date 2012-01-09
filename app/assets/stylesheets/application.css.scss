@@ -10,7 +10,6 @@
 /* Sass import commands. Files imported later have higher priority.
     Thus, since blueprint/screen is on top, it's priority is lowest*/
 @import "blueprint/screen.css.scss";
-@import "users.css.scss";
 @import "formtastic.css.scss";
 @import "formtastic_changes.css.scss";
 @import "custom.css.scss";

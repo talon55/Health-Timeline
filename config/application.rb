@@ -49,6 +49,13 @@ module Timeline
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # Stylesheets to be loaded seperately from the application.css file must be
+    # loaded here
+    config.assets.precompile += ['blueprint/print.css.scss', 'blueprint/ie.css.scss',
+                                  'ie6.css.scss', 'ie7.css.scss']
+
+    # This allows faster asset precompiles by allowing the application to be
+    # loaded partially. Required for Heroku
     config.assets.initialize_on_precompile = false
 
   end
