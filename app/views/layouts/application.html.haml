@@ -4,20 +4,20 @@
     %title=title
     = render "/layouts/stylesheets"
     = csrf_meta_tags
-    
-  %body
+
+  %body{id: body_css(params[:controller])}
     .container
-      /banner image 
+      /banner image
       .span-20
         .span-14
           %br
           #headerimage
             = link_to image_tag("medlogtest2.png"), '/'
-            
-        /log-in info    
+
+        /log-in info
         .span-6.last
           = render  "/layouts/header"
-             
+
       .span-20
         %hr
         %br
@@ -27,6 +27,6 @@
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
           = yield
-          
+
       .span-20.last
         =render "/layouts/footer" 	    

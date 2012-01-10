@@ -52,7 +52,7 @@ module Timeline
     # Stylesheets and Javascript to be loaded seperately from the application.css
     # file must be loaded here
     config.assets.precompile += ['blueprint/print.css', 'blueprint/ie.css',
-                                  'ie6.css', 'ie7.css', 'static.css', 'static.js']
+                                  'ie6.css', 'ie7.css']
 
     # This allows faster asset precompiles by allowing the application to be
     # loaded partially. Required for Heroku
