@@ -3,7 +3,7 @@ module ApplicationHelper
     unless user.blank?
       "Hello, #{current_user.email}!"
     else
-      "Hello"
+      "Sign In or Create an Account"
     end
   end
 

@@ -2,9 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #static{
-  body {
+  
+  #aboutpage {
+  padding-left: 10px;
 
-	  color: #797979;
-
+  h1{
+	color: #797979;
+   }
   }
 }
