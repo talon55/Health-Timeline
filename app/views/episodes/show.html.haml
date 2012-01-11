@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @episode.title
+%p
+  %b Name:
+  #{@episode.family_name} #{@episode.given_name}
+%p
+  %b Created:
+  = @episode.created_at
+%p
+  %b Updated:
+  = @episode.updated_at
+
+= link_to 'Edit', edit_episode_path(@episode)
+\|
+= link_to 'Back', episodes_path
