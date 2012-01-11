@@ -6,4 +6,13 @@ module ApplicationHelper
       "Hello"
     end
   end
+
+  def body_css(controller)
+    if controller.include? 'devise'
+      nil
+    else
+      controller.parameterize
+    end
+  end
+
 end

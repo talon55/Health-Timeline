@@ -12,4 +12,6 @@
 @import "blueprint/screen.css.scss";
 @import "formtastic.css.scss";
 @import "formtastic_changes.css.scss";
+@import "users.css.scss"; // consider using sprockets require statements for
+@import "static.css.scss"; // these instead of trying to squeeze them in here
 @import "custom.css.scss";
