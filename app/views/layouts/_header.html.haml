@@ -2,6 +2,14 @@
   %nav
     %h4= greeting current_user
     %ul.hmenu
-      = render 'devise/menu/registration_items'
-      = render 'devise/menu/login_items'
       %li= link_to "About", about_path
+      |
+      = render 'devise/menu/login_items'
+      |
+      = render 'devise/menu/registration_items'
+      
+      
+      
+      
+     
+      

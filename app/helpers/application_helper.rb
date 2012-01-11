@@ -3,7 +3,7 @@ module ApplicationHelper
     unless user.blank?
       "Hello, #{current_user.email}!"
     else
-      "Hello"
+      "Sign In or Create an Account"
     end
   end
 
@@ -14,5 +14,15 @@ module ApplicationHelper
       controller.parameterize
     end
   end
+
+  def title
+    base_title = "MedLog"
+    if @title.nil?
+      base_title
+    else
+      "#{base_title} | #{@title}"
+    end
+  end
+  
 
 end
