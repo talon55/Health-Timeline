@@ -1,5 +1,7 @@
 Timeline::Application.routes.draw do
 
+  resources :episodes
+
   devise_for :users
 
   match '/about', to: 'static#about', via: 'get'
