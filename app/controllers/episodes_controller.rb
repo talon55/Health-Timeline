@@ -1,4 +1,6 @@
 class EpisodesController < ApplicationController
+
+  before_filter :authenticate_user!
   # GET /episodes
   # GET /episodes.json
   def index

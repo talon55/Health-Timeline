@@ -8,8 +8,9 @@ class Episode
   #validations go here
 
   def name
-
+    [self.given_name, self.family_name].join(' ').chomp(' ')
   end
 
   #model relations go here
+  has_and_belongs_to_many :users
 end

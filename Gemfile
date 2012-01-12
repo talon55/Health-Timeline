@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 gem "mongoid"
 gem 'bson_ext', ">= 1.4"
 gem "devise"
+gem "cancan", "~> 1.6.7"
 gem 'haml-rails', '>= 0.3.4'
 gem 'formtastic'
 

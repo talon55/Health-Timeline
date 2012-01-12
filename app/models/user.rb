@@ -6,4 +6,5 @@ class User
          :recoverable, :rememberable, :trackable, :validatable
 
   attr_accessible :email, :password, :password_confirmation
+  has_and_belongs_to_many :episodes, inverse_of: nil
 end
