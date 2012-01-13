@@ -6,8 +6,36 @@
   #aboutpage {
   padding-left: 10px;
 
-  h1{
-	color: #797979;
-   }
   }
+  
+#Splash{
+text-align: center;
+color: #F62217;  
+
+}    
+
+#LearnMore{
+  padding-left: 200px;
 }
+  
+
+#SplashText{
+text-align: left;
+
+li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+li:first-letter {
+  color: #F62217; 
+  font-weight: bold;
+  vertical-align: 8%;
+}
+  
+}  
+
+
+} //close #static
+
