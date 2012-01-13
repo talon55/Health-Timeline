@@ -10,6 +10,6 @@ class User
   validates_uniqueness_of :email, :case_sensitive => false
 
   attr_accessible :email, :password, :password_confirmation
-  has_and_belongs_to_many :episodes
-  has_many :episodes, inverse_of: :owner
+  has_and_belongs_to_many :shared_episodes, class_name: "Episode"
+  has_many :episodes, inverse_of: :owner, dependent: :destroy
 end
