@@ -1,3 +1,6 @@
+$grey-color: #797979;
+$main-width: 790px;
+
 
 @mixin round($radius: 5px) {
   -moz-border-radius:    $radius;
@@ -34,7 +37,7 @@ ul{
 }
 
 .container {
-  width: 790px;
+  width: $main-width;
 }
 
 body {
@@ -50,12 +53,11 @@ header {
   white-space: nowrap;
   @include round;
   text-align: center;
-  color: #797979;
+  color: $grey-color;
   float: right;
   }
   
   h4{
-  color: #F62217;
   }
 }
 
@@ -73,15 +75,27 @@ section h1 {
   font-size: 200%;
 }
 
+h1 {
+	color: $grey-color;
+   }
+
+h2 {
+	color: $grey-color;
+   }
+   
+h3{
+	color: $grey-color;
+   }
+   
 /* Links */
 
 a {
-  color: #797979;
+  color: $grey-color;
   text-decoration: none;
 }
 
 a:hover {
-  color: #797979;
+  color: $grey-color;
   text-decoration: underline;
 }
 
@@ -108,11 +122,11 @@ nav ul li {
 nav ul li a {
   padding: 0 5px;
   font-weight: normal;
-  color: #797979;
+  color: $grey-color;
 }
 
 nav ul li a:visited {
-  color: #797979;
+  color: $grey-color;
 }
 
 nav ul li a:hover {
@@ -132,10 +146,10 @@ span.confirm {
 	bottom: 10px;
 	position: fixed;
 	height: 30px; /* must be the same value as height */
-	width: 790px;
+	width: $main-width;
 	clear: both;
 	text-align: center; /* up to you */
-	color: #797979;
+	color: $grey-color;
 }
 
 #Splash
