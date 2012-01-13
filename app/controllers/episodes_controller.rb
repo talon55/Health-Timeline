@@ -26,7 +26,7 @@ class EpisodesController < ApplicationController
   # GET /episodes/new
   # GET /episodes/new.json
   def new
-    @episode = Episode.new
+    @episode = current_user.episodes.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -42,7 +42,7 @@ class EpisodesController < ApplicationController
   # POST /episodes
   # POST /episodes.json
   def create
-    @episode = Episode.new(params[:episode])
+    @episode = current_user.episodes.new(params[:episode])
 
     respond_to do |format|
       if @episode.save

@@ -3,8 +3,8 @@
 %table
   %tr
     %th Title
-    %th Family name
-    %th Given name
+    %th Name
+    %th Owner
     %th
     %th
     %th
@@ -12,8 +12,8 @@
   - @episodes.each do |episode|
     %tr
       %td= episode.title
-      %td= episode.family_name
-      %td= episode.given_name
+      %td= episode.name
+      %td= episode.owner.try(:email)
       %td= link_to 'Show', episode
       %td= link_to 'Edit', edit_episode_path(episode)
       %td= link_to 'Destroy', episode, :confirm => 'Are you sure?', :method => :delete

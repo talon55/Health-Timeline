@@ -1,11 +1,14 @@
-%p#notice= notice
+
 
 %p
   %b Title:
   = @episode.title
 %p
   %b Name:
-  #{@episode.name}
+  = @episode.name
+%p
+  %b Owner:
+  = @episode.owner.email
 %p
   %b Created:
   = @episode.created_at

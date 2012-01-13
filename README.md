@@ -11,3 +11,5 @@ start to finish
 ####Response#chunked = true
 not a problem:
 http://stackoverflow.com/questions/7082364/what-does-warn-could-not-determine-content-length-of-response-body-mean-and-h
+
+#### user.episodes only returns episodes the user is owner of, not shares
