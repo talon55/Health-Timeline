@@ -11,7 +11,11 @@ class Episode
     [self.given_name, self.family_name].join(' ').chomp(' ')
   end
 
+  def viewable?(user)
+    self.users.include?(user) or self.owner == user
+  end
+
   #model relations go here
   has_and_belongs_to_many :users, inverse_of: :shared_episodes
-  belongs_to :owner, class_name: "User"
+  belongs_to :owner, class_name: "User", inverse_of: :episodes
 end

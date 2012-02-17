@@ -15,4 +15,13 @@ module ApplicationHelper
     end
   end
 
+  def title
+    base_title = "MedLog"
+    if @title.blank?
+      base_title
+    else
+      "#{base_title} | #{@title}"
+    end
+  end
+
 end
