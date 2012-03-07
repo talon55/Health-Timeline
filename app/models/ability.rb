@@ -3,6 +3,21 @@ class Ability
 
   def initialize(user)
 
+    user ||= User.new # never used, just to dodge nil errors
+    if user.role? :admin
+       #can :manage, User # once this is implemented
+       can :index, Episode
+       can :destroy, Episode
+    end
+
+    can :read, Episode do |episode|
+      episode && episode.users.include?(user)
+    end
+
+    can :manage, Episode do |episode|
+      episode.try(:owner) == user
+    end
+
 
     # Define abilities for the passed in user here. For example:
     #

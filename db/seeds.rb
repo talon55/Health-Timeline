@@ -23,6 +23,3 @@ ep3 = user1.episodes.create!(title: "ep3")
 puts 'Associate Users with Episodes'
 ep0.users << user1
 user1.shared_episodes << ep1
-
-puts 'Destroy user2'
-user2.destroy
