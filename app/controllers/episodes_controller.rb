@@ -9,9 +9,9 @@ class EpisodesController < ApplicationController
   # GET /episodes.json
   def index
     if current_user.role? :admin
-      @episodes = Episode.all
+      @episodes = Episode.asc(:owner_id)
     else
-      @episodes = current_user.viewable_episodes
+      @episodes = current_user.viewable_episodes.asc(:owner_id)
     end
 
     respond_to do |format|
