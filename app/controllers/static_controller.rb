@@ -4,7 +4,7 @@ class StaticController < ApplicationController
   end
 
   def about
-  @title = "About"
+    @title = "About"
   end
 
 end

@@ -12,6 +12,7 @@ gem "cancan", "~> 1.6.7"
 gem 'haml-rails', '>= 0.3.4'
 gem 'formtastic'
 gem 'thin'
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.
