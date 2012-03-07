@@ -11,7 +11,13 @@ class ApplicationController < ActionController::Base
     end
     flash[:alert] = "You do not have permission to #{exception.action} #{subject}"
 
-    redirect_to :back
+    if request.env["HTTP_REFERER"]
+      redirect_to :back
+    elsif current_user
+      redirect_to episodes_path
+    else
+      redirect_to root_url
+    end
   end
 
 end
