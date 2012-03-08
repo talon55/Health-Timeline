@@ -144,7 +144,7 @@ span.confirm {
 #stickyfooter {
 	visibility: visible;
 	bottom: 10px;
-	position: fixed;
+	position: absolute;
 	height: 30px; /* must be the same value as height */
 	width: $main-width;
 	clear: both;
