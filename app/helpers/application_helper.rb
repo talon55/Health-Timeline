@@ -17,12 +17,11 @@ module ApplicationHelper
 
   def title
     base_title = "MedLog"
-    if @title.nil?
+    if @title.blank?
       base_title
     else
       "#{base_title} | #{@title}"
     end
   end
-  
 
 end

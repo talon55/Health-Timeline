@@ -1,27 +1,27 @@
 .container
   .span-20
-    %h1 List of Episodes
-    
+    %h1 Listing episodes
+
     %table
       %tr
         %th Title
-        %th Family name
-        %th Given name
-        %th 
+        %th Name
+        %th Owner
         %th
         %th
-    
+        %th
+
       - @episodes.each do |episode|
         %tr
           %td= episode.title
-          %td= episode.family_name
-          %td= episode.given_name
-          %td= link_to 'Show', episode
-          %td= link_to 'Edit', edit_episode_path(episode)
-          %td= link_to 'Destroy', episode, :confirm => 'Are you sure?', :method => :delete
-    
+          %td= episode.name
+          %td= episode.owner.try(:email)
+          %td= link_to 'Show', episode if can?(:read, episode)
+          %td= link_to 'Edit', edit_episode_path(episode) if can?(:edit, episode)
+          %td= link_to 'Delete', episode, :confirm => 'Are you sure?', :method => :delete if can?(:destroy, episode)
+
     %br
-    
+
     = link_to 'New Episode', new_episode_path
 
 / for each, make a table with the proper attributes and spaces/linebreak(s) at the bottom

@@ -1,11 +1,14 @@
-%p#notice= notice
+
 
 %p
   %b Title:
   = @episode.title
 %p
   %b Name:
-  #{@episode.family_name} #{@episode.given_name}
+  = @episode.name
+%p
+  %b Owner:
+  = @episode.owner.email
 %p
   %b Created:
   = @episode.created_at
@@ -13,6 +16,7 @@
   %b Updated:
   = @episode.updated_at
 
-= link_to 'Edit', edit_episode_path(@episode)
-\|
+- if can? :edit, @episode
+  = link_to 'Edit', edit_episode_path(@episode)
+  \|
 = link_to 'Back', episodes_path

@@ -1,8 +1,18 @@
 class EpisodesController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource :only => [:show,:destroy,:edit,:update]
+
+
+  # Note that devise ensures proper behavior of :index, :new, and :create
+
   # GET /episodes
   # GET /episodes.json
   def index
-    @episodes = Episode.all
+    if current_user.role? :admin
+      @episodes = Episode.asc(:owner_id)
+    else
+      @episodes = current_user.viewable_episodes.asc(:owner_id)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +23,6 @@ class EpisodesController < ApplicationController
   # GET /episodes/1
   # GET /episodes/1.json
   def show
-    @episode = Episode.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,10 +30,14 @@ class EpisodesController < ApplicationController
     end
   end
 
+  # GET /episodes/1/edit
+  def edit
+  end
+
   # GET /episodes/new
   # GET /episodes/new.json
   def new
-    @episode = Episode.new
+    @episode = current_user.episodes.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,15 +45,10 @@ class EpisodesController < ApplicationController
     end
   end
 
-  # GET /episodes/1/edit
-  def edit
-    @episode = Episode.find(params[:id])
-  end
-
   # POST /episodes
   # POST /episodes.json
   def create
-    @episode = Episode.new(params[:episode])
+    @episode = current_user.episodes.new(params[:episode])
 
     respond_to do |format|
       if @episode.save
@@ -56,7 +64,6 @@ class EpisodesController < ApplicationController
   # PUT /episodes/1
   # PUT /episodes/1.json
   def update
-    @episode = Episode.find(params[:id])
 
     respond_to do |format|
       if @episode.update_attributes(params[:episode])
@@ -72,7 +79,6 @@ class EpisodesController < ApplicationController
   # DELETE /episodes/1
   # DELETE /episodes/1.json
   def destroy
-    @episode = Episode.find(params[:id])
     @episode.destroy
 
     respond_to do |format|
