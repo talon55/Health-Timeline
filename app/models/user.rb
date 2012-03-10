@@ -11,7 +11,11 @@ class User
   validates_uniqueness_of :email, :case_sensitive => false
 
   def shared_users
-    User.any_in(_id: self.user_share_ids)
+    unless self.user_share_ids.empty?
+      User.find(self.user_share_ids)
+    else
+      return []
+    end
   end
 
   def share_with users, top = true # I totally over-engineered this method
@@ -30,20 +34,21 @@ class User
 
     if top
       self.user_share_ids.uniq!
-      self.save!
+      self.save
     end
   end
 
-  # only works with BSON::ObjectId, a User object, or an Array of BSON::ObjectId
+  # works with a String or an Array of String
   # consider making this more robust in the future
   def stop_sharing_with users
     case users
     when Array
-      self.user_share_ids.reject! {|id| users.include? id}
+      success = self.user_share_ids.reject! {|id| users.include? id.to_s}
     else
-      self.user_share_ids.reject! {|id| id == users or id == users.try(:id)}
+      success = self.user_share_ids.reject! {|id| users == id.to_s}
     end
-    self.save!
+
+    self.save if success
   end
 
   def viewable_episodes

@@ -20,6 +20,30 @@
     %br/
     = f.password_field :current_password
   %div= f.submit "Update"
-%h3 Cancel my account
+
+%br
+%h3 Share your Episodes
+%p
+  Once you link to an account here, you can start sharing your episodes with
+  that person
+= form_tag share_path, method: :put do
+  = label_tag "Account email:"
+  = email_field_tag :user_email
+  = submit_tag "Share"
+
+%br
+%h4 Revoke Sharing
+%p
+  If you revoke someone's sharing privileges, they will no longer be able to see
+  any of your episodes and you will need to add them above before you can share
+  episodes with them again.
+
+= form_tag share_path, method: :delete do
+  = label_tag "Select an account to revoke:"
+  %br/
+  = select_tag :user_share_ids, options_from_collection_for_select(@shared_users, 'id', 'email'), :include_blank => true
+  = submit_tag "Revoke"
+
+%br
 %p Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}.
 = link_to "Back", :back

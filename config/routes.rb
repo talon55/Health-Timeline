@@ -2,9 +2,11 @@ Timeline::Application.routes.draw do
 
   resources :episodes
 
-  devise_for :users
+  devise_for :users, controllers: {registrations: "registrations"}
 
   match '/about', to: 'static#about', via: 'get'
+  match '/share', to: 'users#update', via: 'put'
+  match '/share', to: 'users#destroy', via: 'delete'
 
   root to: 'static#home', via: 'get'
   # The priority is based upon order of creation:
