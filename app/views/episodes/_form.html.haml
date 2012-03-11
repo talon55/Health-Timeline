@@ -15,5 +15,10 @@
   .field
     = f.label :family_name, "Last Name"
     = f.text_field :family_name
+  .field
+    - for user in current_user.shared_users
+      = check_box_tag user.id, user.id, (@episode.users.include? user), name: "users[]"
+      = label_tag user.id, user.email
+      %br
   .actions
     = f.submit 'Save'

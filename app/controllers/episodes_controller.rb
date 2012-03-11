@@ -50,6 +50,12 @@ class EpisodesController < ApplicationController
   def create
     @episode = current_user.episodes.new(params[:episode])
 
+    if params[:users]
+      params[:users].each do |user|
+        @episode.users << User.find(user)
+      end
+    end
+
     respond_to do |format|
       if @episode.save
         format.html { redirect_to @episode, notice: 'Episode was successfully created.' }
@@ -64,6 +70,19 @@ class EpisodesController < ApplicationController
   # PUT /episodes/1
   # PUT /episodes/1.json
   def update
+    params[:users] ||= []
+    already_shared = @episode.user_ids.map(&:to_s)
+
+    to_add = params[:users] - already_shared
+    to_remove = already_shared - params[:users]
+
+    to_add.each do |user|
+      @episode.users << User.find(user)
+    end
+
+    to_remove.each do |user|
+      @episode.users -= [User.find(user)]
+    end
 
     respond_to do |format|
       if @episode.update_attributes(params[:episode])

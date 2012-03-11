@@ -15,6 +15,12 @@
 %p
   %b Updated:
   = @episode.updated_at
+- unless @episode.users.empty?
+  %p
+    %b Shared With:
+    - @episode.users.each do |user|
+      = user.email
+      %br
 
 - if can? :edit, @episode
   = link_to 'Edit', edit_episode_path(@episode)

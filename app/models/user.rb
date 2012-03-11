@@ -42,10 +42,10 @@ class User
   # consider making this more robust in the future
   def stop_sharing_with users
     case users
-    when Array
+    when Array #unused functionality for now
       success = self.user_share_ids.reject! {|id| users.include? id.to_s}
-    else
-      success = self.user_share_ids.reject! {|id| users == id.to_s}
+    when BSON::ObjectId
+      success = self.user_share_ids.reject! {|id| users == id}
     end
 
     self.save if success

@@ -15,7 +15,3 @@ http://stackoverflow.com/questions/7082364/what-does-warn-could-not-determine-co
 ####Sorting episodes on the index doesn't list user-owned episodes first
 Database-side fixes to this will probably involve a second query which will
 introduce extra overhead. Consider server-side or client-side fixes
-
-####Don't show revoke option in view if current user doesn't have any shared users
-
-####Revoke episode share privileges on removal from share list

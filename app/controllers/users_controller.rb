@@ -21,13 +21,24 @@ class UsersController < ApplicationController
       return
     end
 
-    success = current_user.stop_sharing_with params[:user_share_ids]
+    user = User.find(params[:user_share_ids])
+    success = current_user.stop_sharing_with user.id
 
     if success
-      flash[:notice] = "You are no longer sharing with REPLACE WITH NAME"
+      remove_user(user)
+      flash[:notice] = "You are no longer sharing with #{user.email}"
     else
-      flash[:alert] = "We cannot revoke sharing with REPLACE WITH NAME"
+      flash[:alert] = "We cannot revoke sharing with #{user.email}"
     end
     redirect_to edit_user_registration_path
+  end
+
+  private
+
+  # This method unshares the argument user on all episodes owned by the current_user
+  def remove_user user
+    current_user.episodes.each do |episode|
+      episode.users -= [user]
+    end
   end
 end
