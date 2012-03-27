@@ -6,7 +6,7 @@ this site is also our first real foray into rails development from
 start to finish
 
 
-### Known Bugs:
+### Known Issues:
 
 ####Response#chunked = true
 not a problem:

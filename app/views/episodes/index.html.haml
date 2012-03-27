@@ -7,6 +7,7 @@
         %th Title
         %th Name
         %th Owner
+        %th Shared?
         %th
         %th
         %th
@@ -16,6 +17,7 @@
           %td= episode.title
           %td= episode.name
           %td= episode.owner.try(:email)
+          %td= episode.users.empty? ? "No" : "Yes"
           %td= link_to 'Show', episode if can?(:read, episode)
           %td= link_to 'Edit', edit_episode_path(episode) if can?(:edit, episode)
           %td= link_to 'Delete', episode, :confirm => 'Are you sure?', :method => :delete if can?(:destroy, episode)

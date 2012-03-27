@@ -58,5 +58,7 @@ module Timeline
     # loaded partially. Required for Heroku
     config.assets.initialize_on_precompile = false
 
+    # Find the Devise views
+    config.paths["app/views"] << "app/views/devise"
   end
 end

@@ -56,7 +56,7 @@ header {
   color: $grey-color;
   float: right;
   }
-  
+
   h4{
   }
 }
@@ -82,11 +82,11 @@ h1 {
 h2 {
 	color: $grey-color;
    }
-   
+
 h3{
 	color: $grey-color;
    }
-   
+
 /* Links */
 
 a {
@@ -155,4 +155,10 @@ span.confirm {
 #Splash
 {
 text-align: center;
+}
+
+#noshare {
+  background-color: #FCC;
+  border: solid 1px darken(#FCC, 15%);
+  text-align: center;
 }
