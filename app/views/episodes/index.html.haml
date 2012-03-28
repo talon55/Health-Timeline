@@ -45,19 +45,19 @@
       = email_field_tag :user_email
       = submit_tag "Share"
   
-  %br
-  - unless @shared_users.blank?
-    %h4 Revoke Sharing
-    %p
-      If you revoke someone's sharing privileges, they will no longer be able to see
-      any of your episodes and you will need to add them above before you can share
-      episodes with them again.
-    %p
-      - options = options_from_collection_for_select(@shared_users, 'id', 'email')
-      = form_tag share_path, method: :delete do
-        = label_tag "Select an account to revoke:"
-      %br/
-      = select_tag :user_share_ids, options, :include_blank => true
-      = submit_tag "Revoke"
-  /- else
-  /  %p#noshare You don't currently have anyone on your share list. Try adding someone!
+    %br
+    - unless @shared_users.blank?
+      %h4 Revoke Sharing
+      %p
+        If you revoke someone's sharing privileges, they will no longer be able to see
+        any of your episodes and you will need to add them above before you can share
+        episodes with them again.
+      %p
+        - options = options_from_collection_for_select(@shared_users, 'id', 'email')
+        = form_tag share_path, method: :delete do
+          = label_tag "Select an account to revoke:"
+        %br/
+        = select_tag :user_share_ids, options, :include_blank => true
+        = submit_tag "Revoke"
+    /- else
+    /  %p#noshare You don't currently have anyone on your share list. Try adding someone!
