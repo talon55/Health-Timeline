@@ -179,3 +179,46 @@ text-align: center;
   border: solid 1px darken(#FCC, 15%);
   text-align: center;
 }
+
+
+episodestable{
+
+	table{
+	color: $grey-color;
+	
+	th,td{
+	}
+	
+	#mainrow{
+	color: black;
+	}
+	
+	#eptitle{
+	color: black;
+	}	
+	
+	#epname{
+	color: black;
+	}
+	
+	#epowner{
+	color: black;
+	}
+
+	#epshared{
+	color: red;
+	}
+	
+	#entrydelete{
+	color: #F62217;
+	}
+	
+	td{
+	padding: 5px;
+	}
+	
+	}
+	
+	
+
+}
