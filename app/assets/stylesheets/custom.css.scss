@@ -2,6 +2,13 @@ $grey-color: #797979;
 $main-width: 790px;
 $main-height: 100px;
 
+.redbold { 
+
+color: red; 
+text-decoration: underline;
+cursor:pointer;
+}
+
 
 @mixin round($radius: 5px) {
   -moz-border-radius:    $radius;
@@ -221,7 +228,10 @@ episodestable{
 	}
 
 	}
-
+	
+#NewEpisodeLink{
+  font-style: italic;
+}
 
 
 }

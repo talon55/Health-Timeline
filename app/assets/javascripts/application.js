@@ -7,3 +7,17 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+   $(document).ready(function() {
+   $('#tagit').find('#belowslide').hide().end().find('h3').click(function() {
+     $('#belowslide').slideToggle();
+   });
+ });
+ 
+  $(document).ready(function() {
+   $('#tagit').find('h3').hover(function() {
+     $(this).addClass("redbold");
+   },function(){
+     $(this).removeClass("redbold");
+   });
+ });
