@@ -1,29 +1,32 @@
-.container
-  .span-20
-    %h1 Listing episodes
+%episodestable
+  .container
+    .span-20
+      %h2  Your personal and shared recordings
+      %br
 
-    %table
-      %tr
-        %th Title
-        %th Name
-        %th Owner
-        %th Shared?
-        %th
-        %th
-        %th
+      %table
+        %tr{:id => "mainrow"}
+          %th Title
+          %th Name
+          %th Owner
+          %th Shared?
+          %th
+          %th
+          %th
 
-      - @episodes.each do |episode|
-        %tr
-          %td= episode.title
-          %td= episode.name
-          %td= episode.owner.try(:email)
-          %td= episode.users.empty? ? "No" : "Yes"
-          %td= link_to 'Show', episode if can?(:read, episode)
-          %td= link_to 'Edit', edit_episode_path(episode) if can?(:edit, episode)
-          %td= link_to 'Delete', episode, :confirm => 'Are you sure?', :method => :delete if can?(:destroy, episode)
+        - @episodes.each do |episode|
+          %tr
+            %td{:id => "eptitle"}= episode.title
+            %td{:id => "epname"}= episode.name
+            %td{:id => "epowner"}= episode.owner.try(:email)
+            %td{:id => "epshared"}= episode.users.empty? ? "No" : "Yes"
+            %td= link_to 'Show', episode if can?(:read, episode)
+            %td= link_to 'Edit', edit_episode_path(episode) if can?(:edit, episode)
+            %td{:id => "entrydelete"}= link_to 'Delete', episode, :confirm => 'Are you sure?', :method => :delete if can?(:destroy, episode)
 
-    %br
+      %br
 
-    = link_to 'New Episode', new_episode_path
+#NewEpisodeLink
+  = link_to 'New Episode', new_episode_path
 
 / for each, make a table with the proper attributes and spaces/linebreak(s) at the bottom

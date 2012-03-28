@@ -26,6 +26,10 @@
           - flash.each do |name, msg|
             = content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String)
           = yield
-
-      .span-20.last
-        =render "/layouts/footer" 	    
+          
+  %br
+  %br
+  #footspace
+  .container    
+    .span-20.last
+      =render "/layouts/footer" 	    
