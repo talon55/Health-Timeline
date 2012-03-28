@@ -1,7 +1,7 @@
 module ApplicationHelper
   def greeting user
     unless user.blank?
-      "Hello, #{current_user.email}!"
+      "Logged in as: #{current_user.email}"
     else
       "Sign In or Create an Account"
     end

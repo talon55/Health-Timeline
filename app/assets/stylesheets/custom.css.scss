@@ -1,5 +1,6 @@
 $grey-color: #797979;
 $main-width: 790px;
+$main-height: 100px;
 
 
 @mixin round($radius: 5px) {
@@ -41,6 +42,7 @@ ul{
 }
 
 body {
+
 }
 
 header {
@@ -141,16 +143,31 @@ span.confirm {
   margin-bottom: 1em;
 }
 
+/*
 #stickyfooter {
 	visibility: visible;
+	margin: 0.4em 0 0.25em 0em;
 	bottom: 10px;
 	position: absolute;
-	height: 30px; /* must be the same value as height */
+	height: 30px;
 	width: $main-width;
+	text-align: center;
 	clear: both;
-	text-align: center; /* up to you */
 	color: $grey-color;
 }
+*/
+
+#stickyfooter{
+  width: $main-width;
+  visibility: visible;
+  text-align: center;
+  color: $grey-color;
+  position:relative;
+  margin-bottom:10px;
+
+}
+
+
 
 #Splash
 {
