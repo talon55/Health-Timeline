@@ -12,12 +12,12 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "We could not find a user with this email."
     end
-    redirect_to edit_user_registration_path
+    redirect_to episodes_path
   end
 
   def destroy
     if params[:user_share_ids].blank?
-      redirect_to edit_user_registration_path, alert: "Please select a user to revoke sharing"
+      redirect_to episodes_path, alert: "Please select a user to revoke sharing"
       return
     end
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     else
       flash[:alert] = "We cannot revoke sharing with #{user.email}"
     end
-    redirect_to edit_user_registration_path
+    redirect_to episodes_path
   end
 
   private

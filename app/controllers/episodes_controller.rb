@@ -13,6 +13,7 @@ class EpisodesController < ApplicationController
     else
       @episodes = current_user.viewable_episodes.asc(:owner_id)
     end
+    @shared_users = current_user.shared_users
 
     respond_to do |format|
       format.html # index.html.erb
