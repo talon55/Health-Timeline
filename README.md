@@ -1,7 +1,7 @@
 # Health Timeline Project
 
 ### What it is
-MedLog is a virtual symptom log.  We envision it allowing users to conveniently catalog their medical symptoms as they occur.
+MedLog is a symptom log for the 21st century.
 
 
 ### Known Issues:
