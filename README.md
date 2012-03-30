@@ -1,9 +1,7 @@
 # Health Timeline Project
 
 ### What it is
-  Originally Planned as a health-related project for a design class,
-this site is also our first real foray into rails development from
-start to finish
+To keep our Rails skills sharp, we recently began building MedLog.  In its completed form, we envision it allowing users to conveniently catalog their medical symptoms as audio clips, images, videos, and concise text descriptions.  Rather than having to rely on fuzzy memories about when symptoms first appeared or how they progressed over time, users could use MedLog to explain to their physicians precisely what occurred and when (and even under what circumstances).  A cough can be documented through audio samples, an injured ankle through pictures, an infant’s behavior through videos, etc.  Since we think the idea would work best as a smartphone app, we’re also both using the project as motivation to learn Android (Eric) and iOS (Akshay) development.
 
 
 ### Known Issues:
