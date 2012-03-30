@@ -1,7 +1,7 @@
 # Health Timeline Project
 
 ### What it is
-To keep our Rails skills sharp, we recently began building MedLog.  In a more complete form, we envision it allowing users to conveniently catalog their medical symptoms.
+MedLog is a virtual symptom log.  We envision it allowing users to conveniently catalog their medical symptoms as they occur.
 
 
 ### Known Issues:
