@@ -1,4 +1,4 @@
-# Health Timeline Project
+# MedLog
 
 ### What it is
 MedLog is a symptom log for the 21st century.
