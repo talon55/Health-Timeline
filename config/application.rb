@@ -61,5 +61,13 @@ module Timeline
 
     # Find the Devise views
     config.paths["app/views"] << "app/views/devise"
+
+    # Configure Generators
+    config.generators do |g|
+        g.orm :mongoid
+        g.template_engine :haml # this could be :erb or whatever
+        g.test_framework :rspec, :fixture => false # this could be :rspec or whatever
+    end
+
   end
 end
