@@ -1,7 +1,9 @@
 Timeline::Application.routes.draw do
 
-  resources :episodes
-  
+  resources :episodes do
+    resources :entries
+  end
+
 
   devise_for :users, controllers: {registrations: "registrations"}
 

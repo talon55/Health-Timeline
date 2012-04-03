@@ -22,6 +22,10 @@
       = user.email
       %br
 
+= link_to 'Add A New Entry', new_episode_entry_path(@episode)
+%br
+%br
+
 - if can? :edit, @episode
   = link_to 'Edit', edit_episode_path(@episode)
   \|
