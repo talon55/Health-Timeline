@@ -6,5 +6,13 @@
         - @entry.errors.full_messages.each do |msg|
           %li= msg
 
+  .field
+    = f.label :description
+    %br
+    = f.text_field :description
+  .field
+    = f.label :notes
+    %br
+    = f.text_field :notes
   .actions
     = f.submit 'Save'

@@ -1,23 +1,13 @@
 class EntriesController < ApplicationController
-  # GET /entries
-  # GET /entries.json
-  def index
-    @entries = Entry.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @entries }
-    end
-  end
 
   # GET /entries/1
   # GET /entries/1.json
   def show
-    @entry = Entry.find(params[:id])
+    # @episode = Entry.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @entry }
+      format.json { render json: @episode }
     end
   end
 
@@ -25,32 +15,33 @@ class EntriesController < ApplicationController
   # GET /entries/new.json
   def new
     @episode = Episode.find(params[:episode_id])
-    @entry = Entry.new
+    @entry = @episode.entries.new
     logger.debug @entry
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @entry }
+      format.json { render json: @episode }
     end
   end
 
   # GET /entries/1/edit
   def edit
-    @entry = Entry.find(params[:id])
+    #@episode = Entry.find(params[:id])
   end
 
   # POST /entries
   # POST /entries.json
   def create
-    @entry = Entry.new(params[:entry])
+    @episode = Episode.find(params[:episode_id])
+    @episode.entries.new(params[:entry])
 
     respond_to do |format|
-      if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
-        format.json { render json: @entry, status: :created, location: @entry }
+      if @episode.save
+        format.html { redirect_to @episode, notice: 'Entry was successfully created.' }
+        format.json { render json: @episode, status: :created, location: @episode }
       else
         format.html { render action: "new" }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        format.json { render json: @episode.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -58,15 +49,15 @@ class EntriesController < ApplicationController
   # PUT /entries/1
   # PUT /entries/1.json
   def update
-    @entry = Entry.find(params[:id])
+    #@episode = Entry.find(params[:id])
 
     respond_to do |format|
-      if @entry.update_attributes(params[:entry])
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
+      if @episode.update_attributes(params[:entry])
+        format.html { redirect_to @episode, notice: 'Entry was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        format.json { render json: @episode.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -74,11 +65,11 @@ class EntriesController < ApplicationController
   # DELETE /entries/1
   # DELETE /entries/1.json
   def destroy
-    @entry = Entry.find(params[:id])
-    @entry.destroy
+    @episode = Episode.find(params[:episode_id])
+    @episode.entries.find(params[:id]).destroy
 
     respond_to do |format|
-      format.html { redirect_to entries_url }
+      format.html { redirect_to @episode }
       format.json { head :no_content }
     end
   end

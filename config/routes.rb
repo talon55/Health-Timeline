@@ -1,7 +1,7 @@
 Timeline::Application.routes.draw do
 
   resources :episodes do
-    resources :entries
+    resources :entries, except: [:index]
   end
 
 
