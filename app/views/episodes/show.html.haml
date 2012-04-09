@@ -37,10 +37,12 @@
         %hr
       #{count += 1}. #{entry.description}
       = render 'entries/show', entry: entry
-      edit
-      \|
-      / This was moved into  a helper to hide all of the arguments
-      = delete_entry(@episode, entry)
+
+      -# These were moved into a helper to clean up all of the arguments
+      - if can? :manage, entry
+        = edit_entry(@episode, entry)
+        \|
+        = delete_entry(@episode, entry)
       %hr
 
 

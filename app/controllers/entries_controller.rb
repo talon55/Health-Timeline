@@ -2,21 +2,21 @@ class EntriesController < ApplicationController
 
   # GET /entries/1
   # GET /entries/1.json
-  def show
-    # @episode = Entry.find(params[:id])
+#  def show
+#    @episode = Episode.find(params[:episode_id])
+#    @entry = @episode.entries.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @episode }
-    end
-  end
+#    respond_to do |format|
+#      format.html # show.html.erb
+#      format.json { render json: @episode }
+#    end
+#  end
 
   # GET /entries/new
   # GET /entries/new.json
   def new
     @episode = Episode.find(params[:episode_id])
     @entry = @episode.entries.new
-    logger.debug @entry
 
     respond_to do |format|
       format.html # new.html.erb
@@ -26,7 +26,8 @@ class EntriesController < ApplicationController
 
   # GET /entries/1/edit
   def edit
-    #@episode = Entry.find(params[:id])
+    @episode = Episode.find(params[:episode_id])
+    @entry = @episode.entries.find(params[:id])
   end
 
   # POST /entries
@@ -49,10 +50,11 @@ class EntriesController < ApplicationController
   # PUT /entries/1
   # PUT /entries/1.json
   def update
-    #@episode = Entry.find(params[:id])
+    @episode = Episode.find(params[:episode_id])
+    @entry = @episode.entries.find(params[:id])
 
     respond_to do |format|
-      if @episode.update_attributes(params[:entry])
+      if @entry.update_attributes(params[:entry])
         format.html { redirect_to @episode, notice: 'Entry was successfully updated.' }
         format.json { head :no_content }
       else

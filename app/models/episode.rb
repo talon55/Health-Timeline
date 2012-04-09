@@ -18,5 +18,5 @@ class Episode
   #model relations go here
   has_and_belongs_to_many :users, inverse_of: :shared_episodes
   belongs_to :owner, class_name: "User", inverse_of: :episodes
-  embeds_many :entries
+  embeds_many :entries, cascade_callbacks: true
 end
