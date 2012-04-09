@@ -1,9 +1,7 @@
-# Health Timeline Project
+# MedLog
 
 ### What it is
-  Originally Planned as a health-related project for a design class,
-this site is also our first real foray into rails development from
-start to finish
+MedLog is a symptom log for the 21st century.
 
 
 ### Known Issues:
