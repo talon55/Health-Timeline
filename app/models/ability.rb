@@ -18,6 +18,9 @@ class Ability
       episode.try(:owner) == user
     end
 
+    can :manage, Entry do |entry|
+      entry.episode.try(:owner) == user
+    end
 
     # Define abilities for the passed in user here. For example:
     #

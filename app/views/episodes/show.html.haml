@@ -1,5 +1,8 @@
 
 
+= render 'show_links'
+%br
+
 %p
   %b Title:
   = @episode.title
@@ -15,14 +18,33 @@
 %p
   %b Updated:
   = @episode.updated_at
-- unless @episode.users.empty?
+- unless @episode.users.empty? or cannot? :manage, @episode
   %p
     %b Shared With:
     - @episode.users.each do |user|
       = user.email
       %br
 
-- if can? :edit, @episode
-  = link_to 'Edit', edit_episode_path(@episode)
-  \|
-= link_to 'Back', episodes_path
+- unless @episode.entries.empty?
+  %h3 Entries
+  = render 'add_entry'
+  %br
+
+  - count = 0
+  - @episode.entries.each do |entry|
+    .entry
+      - if count == 0
+        %hr
+      #{count += 1}. #{entry.description}
+      = render 'entries/show', entry: entry
+
+      -# These were moved into a helper to clean up all of the arguments
+      - if can? :manage, entry
+        = edit_entry(@episode, entry)
+        \|
+        = delete_entry(@episode, entry)
+      %hr
+
+
+= render 'add_entry'
+= render 'show_links'
